@@ -38,7 +38,7 @@
 
   $conn->query("use quoicou");
 
-  $sql = "select substr(label,8,1) as alpha, count(label) as n from mots group by substr(label,8,1)";
+  $sql = "select substr(label,8,1) as alpha, count(label) as n from mots group by substr(label,8,1) order by substr(label,8,1)";
   $brief = $conn->query($sql);
 
   if ($brief->num_rows <= 0)

@@ -1,3 +1,4 @@
+
 create database quoicou;
 
 create user php identified by 'K&a=K!pKv~5kf8qa';
