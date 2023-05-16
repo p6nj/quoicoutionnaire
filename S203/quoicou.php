@@ -3,6 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Sans+MS&display=swap">
   <title>Quoicoutionnaire</title>
 </head>
 
@@ -18,7 +19,7 @@
   </aside>
 
   <br>
-  <a href="submit.php">Ajoutez votre mot !</a>
+  <a href="submit.php">Ajoutez votre mot !</a><br><br>
 
   <?php
   error_reporting(E_ALL);
@@ -49,13 +50,14 @@
     $mots = $conn->query($sql);
     if ($mots->num_rows <= 0)
       die("Error getting words in quoicou-" . $row["alpha"]);
+    echo '<div class="container">';
     echo "<h2>Quoicou-" . strtoupper($row["alpha"]) . "</h2>";
     echo "<ul>";
     for ($i = 0; $i < $row["n"]; $i++) {
       $mot = $mots->fetch_assoc()["label"];
       echo "<li>" . $mot . "</li>";
     }
-    echo "</ul>";
+    echo "</ul></div>";
   }
 
   $conn->close();

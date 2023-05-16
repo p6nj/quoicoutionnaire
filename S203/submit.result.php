@@ -3,6 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comic+Sans+MS&display=swap">
     <title>Quoicoutionnaire</title>
 </head>
 <?php
@@ -29,14 +30,15 @@ function main()
         $status = "Le mot ne peut pas être vide !";
         return;
     }
-    if (strtolower(substr($_POST["mot"], 0, 7)) != 'quoicou')
-        die("Le mot doit commencer par 'quoicou'.");
-    $sql = "insert into mots(label) values ('" . $_POST["mot"] . "')";
+    if (strtolower(substr($_POST["mot"], 0, 7)) != 'quoicou') {
+        $status = "Le mot doit commencer par 'quoicou'.";
+        return;
+    }
     try {
-        if ($conn->query($sql))
+        if ($conn->query("insert into mots(label) values ('" . $_POST["mot"] . "')"))
             $success = true;
     } catch (mysqli_sql_exception $ex) {
-        $status = $ex->getCode() == 1062 ? 'Ce mot existe déjà dans la base !' : $conn->error;
+        $status = $ex->getCode() == 1062 ? 'Ce mot existe déjà dans la base !' : $ex;
     }
 }
 main();
@@ -49,10 +51,12 @@ main();
         <sub>LA référence</sub>
     </header>
 
-    <h2>Epic
-        <?php echo $success ? 'success' : 'fail' ?>
-    </h2>
-    <?php echo $success ? 'Mot ajouté !' : $status; ?>
+    <div class=<?php echo $success ? '"success"' : '"failure"' ?>>
+        <h2>Epic
+            <?php echo $success ? 'success' : 'fail' ?>
+        </h2>
+        <?php echo $success ? 'Mot ajouté !' : $status; ?>
+    </div>
     <br><br>
     <a href="quoicou.php">Retourner au dictionnaire</a>
 
