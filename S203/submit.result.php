@@ -47,15 +47,17 @@
 
 <body>
 
-    <h1>Quoicoutionnaire</h1>
-    <sub>LA référence</sub>
+    <header>
+        <h1>Quoicoutionnaire</h1>
+        <sub>LA référence</sub>
+    </header>
 
     <h2>Epic
         <?php echo $success ? 'success' : 'fail' ?>
     </h2>
     <?php echo $success ? 'Mot ajouté !' : $status; ?>
     <br><br>
-    <a href="index.php">Retourner au dictionnaire</a>
+    <a href="quoicou.php">Retourner au dictionnaire</a>
 
 </body>
 

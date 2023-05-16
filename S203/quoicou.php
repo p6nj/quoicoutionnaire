@@ -7,9 +7,15 @@
 </head>
 
 <body>
+  <header>
+    <h1>Quoicoutionnaire</h1>
+    <sub>LA référence</sub>
+  </header>
 
-  <h1>Quoicoutionnaire</h1>
-  <sub>LA référence</sub>
+  <aside>Connecté en tant que:
+    <?php require_once '../vendor/autoload.php';
+    echo Faker\Factory::create("FR_fr")->userName(); ?>
+  </aside>
 
   <br>
   <a href="submit.php">Ajoutez votre mot !</a>

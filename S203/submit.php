@@ -8,8 +8,10 @@
 
 <body>
 
-    <h1>Quoicoutionnaire</h1>
-    <sub>LA référence</sub>
+    <header>
+        <h1>Quoicoutionnaire</h1>
+        <sub>LA référence</sub>
+    </header>
 
     <h2>Soumettre votre quoicoumot</h2>
     Vous pouvez soumettre votre propre quoicoumot à la base :
