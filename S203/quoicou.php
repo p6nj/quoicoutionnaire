@@ -62,6 +62,16 @@
 
   $conn->close();
   ?>
+
+  <div class="h-banner">
+    <img src="../img/casinosdv.gif" alt="pub chinoise">
+    <img src="../img/casinozersrq.gif" alt="big chilling">
+  </div>
+
+  <div class="v-banner">
+    <img src="../img/banner.gif" alt="grand casino">
+  </div>
+
 </body>
 
 </html>

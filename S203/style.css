@@ -56,3 +56,39 @@ input {
 ::selection {
     background-color: bisque;
 }
+
+div.h-banner {
+    position: fixed;
+    bottom: 15px;
+    right: 0;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+div.h-banner>img {
+    object-fit: fill;
+    height: 100%;
+    width: 30%;
+    margin: 10px;
+    border: 2px dotted grey;
+}
+
+div.v-banner {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 200px;
+    height: 400px;
+    background-color: #f2f2f2;
+}
+
+div.h-banner>img {
+    object-fit: fill;
+    height: 100%;
+    width: 30%;
+    margin: 10px;
+    border: 2px dotted grey;
+}

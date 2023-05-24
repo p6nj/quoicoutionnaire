@@ -2,7 +2,6 @@
 create database quoicou;
 
 create user php identified by 'K&a=K!pKv~5kf8qa';
-grant select, insert on quoicou.mots to php;
 
 use quoicou;
 
@@ -38,7 +37,7 @@ VALUES
     ('quoicouillère'),
     ('quoicoudée'),
     ('quoicouvrant'),
-    ('quoicouffeur'),
+    ('quoicoufeur'),
     ('quoicouetteuse'),
     ('quoicoussard'),
     ('quoicouenne'),
@@ -63,3 +62,5 @@ VALUES
     ('quoicoulombe'),
     ('quoicoupe'),
     ('quoicoupette');
+
+grant select, insert on quoicou.mots to php;
